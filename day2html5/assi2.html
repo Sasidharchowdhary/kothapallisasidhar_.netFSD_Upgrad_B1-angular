@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Hospital Appointment Site</title>
+</head>
+<body>
+
+    <header>
+        <h1>Online Hospital Appointment System</h1>
+        <p>Book your appointment easily</p>
+    </header>
+<main>
+    
+<section>
+    <h2>Patient Appointment Form</h2>
+    <form novalidate>
+
+    <label>Department:</label><br>
+    <input type="text" list="departments" placeholder="Select department" required>
+
+    <datalist id="departments">
+        <option value="Cardio">
+        <option value="Neuro">
+        <option value="General Medicine">
+    </datalist>
+    <br><br>
+
+    <label>Preferred Doctor:</label><br>
+    <input type="text" list="doctors" placeholder="elect doctor">
+
+    <datalist id="doctors">
+        <option value="Dr. Rao">
+        <option value="Dr. Sharma">
+        <option value="Dr. Mehta">
+        <option value="Dr. Anjali">
+    </datalist>
+    <br><br>
+
+    <label>Appointment Date:</label><br>
+    <input type="date" min="2026-01-01" required>
+    <br><br>
+
+    <label>Appointment Time:</label><br>
+    <input type="time">
+    <br><br>
+
+    <label>
+        <input type="checkbox"> Emergency Case (Time selection not required)
+    </label>
+    <br><br>
+
+    <label>Age:</label><br>
+    <input type="number" min="1" max="120" required>
+    <br><br>
+
+    <label>Phone Number:</label><br>
+    <input type="tel" pattern="[0-9]{10}" placeholder="10 digit mobile number" required>
+    <br><br>
+
+    <label>Email:</label><br>
+    <input type="email" required autocomplete="on">
+    <br><br>
+
+    <label>Upload Medical Reports:</label><br>
+    <input type="file" multiple>
+    <br><br>
+
+    <input type="submit" value="Book Appointment">
+    <input type="reset" value="Reset">
+
+</form>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 City Hospital | Contact: 9876543210</p>
+</footer>
+</body>
+</html>
