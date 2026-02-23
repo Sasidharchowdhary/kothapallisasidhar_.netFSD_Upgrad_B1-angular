@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WEB PAGE for STUD</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      text-align: center;
+      padding-top: 50px;
+    }
+    input {
+      padding: 8px;
+      font-size: 16px;
+      margin: 10px;
+      width: 150px;
+    }
+    button {
+      padding: 8px 15px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #333;
+      border: 2px solid #333;
+      display: inline-block;
+      padding: 15px 25px;
+      background-color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h3>Student Grade Evaluator</h3>
+  <input type="number" id="marksInput" placeholder="Enter marks">
+
+  <button onclick="evaluateGrade()">check grade</button>
+
+  <div class="result" id="result">
+    YOUR GRADE IS
+  </div>
+
+  <script>
+    function evaluateGrade() {
+      let marks = document.getElementById("marksInput").value;
+      let result = document.getElementById("result");
+
+      if (marks >= 75) {
+        result.innerHTML = "Grade A";
+      }
+      else if (marks >= 60) {
+        result.innerHTML = "Grade B";
+      }
+      else if (marks >= 40) {
+        result.innerHTML = "Grade C";
+      }
+      else {
+        result.innerHTML = "Fail";
+      }
+
+      console.log("Marks:", marks);
+    }
+  </script>
+</body>
+</html>

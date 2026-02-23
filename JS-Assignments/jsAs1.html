@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> WEB page ID</title>
+  <style>
+    body 
+    {
+        background-color: rgb(230, 71, 71);
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    header 
+    {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .nav-menu {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      background-color: #333;
+    }
+
+    .nav-menu li {
+      color: white;
+      padding: 15px 20px;
+      font-size: 18px;
+    }
+
+    section {
+      text-align: center;
+      font-size: 18px;
+      padding: 20px;
+    }
+    @media screen and (max-width: 600px) {
+      body { background-color: rgb(178, 225, 78); }
+
+      .nav-menu {
+        flex-direction: column;  
+        align-items: center;
+      }
+
+      .nav-menu li {
+        font-size: 14px;            
+        padding: 10px;
+      }
+
+      section {
+        font-size: 14px;    
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1> WEB page ID</h1>
+  </header>
+  <nav>
+    <ul class="nav-menu">
+      <li>Home</li>
+      <li>About</li>
+      <li>Services</li>
+      <li>Contact</li>
+    </ul>
+  </nav>
+  <section>
+    <p>This webpage changes layout based on screen size.</p>
+  </section>
+
+</body>
+</html>
