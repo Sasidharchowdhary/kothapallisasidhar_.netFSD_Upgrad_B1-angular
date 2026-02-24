@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Form Validation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef6ff;
+      text-align: center;
+      padding-top: 40px;
+    }
+
+    input {
+      padding: 8px;
+      margin: 5px;
+      width: 250px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 8px 15px;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .message {
+      margin-top: 15px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h3>Registration Form</h3>
+
+  <input type="text" id="name" placeholder="Enter Name" onchange="validateName()"><br>
+
+  <input type="text" id="email" placeholder="Enter Email" onchange="validateEmail()"><br>
+
+  <input type="number" id="age" placeholder="Enter Age" onchange="validateAge()"><br>
+
+  <button onclick="saveData()">Submit</button>
+
+  <div class="message" id="msg"></div>
+
+  <script>
+    let isValidName = false;
+    let isValidEmail = false;
+    let isValidAge = false;
+
+    function validateName() {
+      let name = document.getElementById("name").value;
+      if (name === "") {
+        document.getElementById("msg").innerText = "❌ Name cannot be empty";
+        isValidName = false;
+      } else {
+        isValidName = true;
+        document.getElementById("msg").innerText = "";
+      }
+    }
+
+    function validateEmail() {
+      let email = document.getElementById("email").value;
+      if (!email.includes("@")) {
+        document.getElementById("msg").innerText = "❌ Email must contain @";
+        isValidEmail = false;
+      } else {
+        isValidEmail = true;
+        document.getElementById("msg").innerText = "";
+      }
+    }
+
+    function validateAge() {
+      let age = Number(document.getElementById("age").value);
+      if (age <= 18) {
+        document.getElementById("msg").innerText = "❌ Age must be greater than 18";
+        isValidAge = false;
+      } else {
+        isValidAge = true;
+        document.getElementById("msg").innerText = "";
+      }
+    }
+
+    function saveData() {
+      if (isValidName && isValidEmail && isValidAge) {
+        sessionStorage.setItem("name", document.getElementById("name").value);
+        sessionStorage.setItem("email", document.getElementById("email").value);
+        sessionStorage.setItem("age", document.getElementById("age").value);
+
+        document.getElementById("msg").innerText = "✅ Registration Successful";
+      } else {
+        document.getElementById("msg").innerText = "❌ Please fix validation errors";
+      }
+    }
+  </script>
+
+</body>
+</html>
